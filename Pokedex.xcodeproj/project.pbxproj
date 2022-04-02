@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		7E9134AD27E3A4BC00D9D440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9134AC27E3A4BC00D9D440 /* AppDelegate.swift */; };
 		7E9134AF27E3A4BC00D9D440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9134AE27E3A4BC00D9D440 /* SceneDelegate.swift */; };
-		7E9134B127E3A4BC00D9D440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9134B027E3A4BC00D9D440 /* ViewController.swift */; };
+		7E9134B127E3A4BC00D9D440 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9134B027E3A4BC00D9D440 /* DiscoverViewController.swift */; };
 		7E9134B427E3A4BC00D9D440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9134B227E3A4BC00D9D440 /* Main.storyboard */; };
 		7E9134B627E3A4BD00D9D440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9134B527E3A4BD00D9D440 /* Assets.xcassets */; };
 		7E9134B927E3A4BD00D9D440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9134B727E3A4BD00D9D440 /* LaunchScreen.storyboard */; };
+		7E9357E127F5FCDA00FC2508 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9357E027F5FCDA00FC2508 /* ApiHelper.swift */; };
+		7E9357E327F5FD4800FC2508 /* Pokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9357E227F5FD4800FC2508 /* Pokedex.swift */; };
+		7E9357EB27F874DC00FC2508 /* PokemonDiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9357EA27F874DC00FC2508 /* PokemonDiscoverCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E9134A927E3A4BC00D9D440 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9134AC27E3A4BC00D9D440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E9134AE27E3A4BC00D9D440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7E9134B027E3A4BC00D9D440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E9134B027E3A4BC00D9D440 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		7E9134B327E3A4BC00D9D440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E9134B527E3A4BD00D9D440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E9134B827E3A4BD00D9D440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E9134BA27E3A4BD00D9D440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9357E027F5FCDA00FC2508 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		7E9357E227F5FD4800FC2508 /* Pokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex.swift; sourceTree = "<group>"; };
+		7E9357EA27F874DC00FC2508 /* PokemonDiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,56 @@
 			children = (
 				7E9134AC27E3A4BC00D9D440 /* AppDelegate.swift */,
 				7E9134AE27E3A4BC00D9D440 /* SceneDelegate.swift */,
-				7E9134B027E3A4BC00D9D440 /* ViewController.swift */,
-				7E9134B227E3A4BC00D9D440 /* Main.storyboard */,
-				7E9134B527E3A4BD00D9D440 /* Assets.xcassets */,
-				7E9134B727E3A4BD00D9D440 /* LaunchScreen.storyboard */,
 				7E9134BA27E3A4BD00D9D440 /* Info.plist */,
+				7E9134B527E3A4BD00D9D440 /* Assets.xcassets */,
+				7E9134C227E3A4D400D9D440 /* Model */,
+				7E9134C127E3A4CE00D9D440 /* View */,
+				7E9134C027E3A4C900D9D440 /* Controller */,
+				7E9357DF27F5FB7900FC2508 /* Helper */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		7E9134C027E3A4C900D9D440 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E9134B027E3A4BC00D9D440 /* DiscoverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7E9134C127E3A4CE00D9D440 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E9134C327E3ADCE00D9D440 /* Cell */,
+				7E9134B727E3A4BD00D9D440 /* LaunchScreen.storyboard */,
+				7E9134B227E3A4BC00D9D440 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E9134C227E3A4D400D9D440 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E9357E227F5FD4800FC2508 /* Pokedex.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E9134C327E3ADCE00D9D440 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7E9357EA27F874DC00FC2508 /* PokemonDiscoverCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7E9357DF27F5FB7900FC2508 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7E9357E027F5FCDA00FC2508 /* ApiHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E9134B127E3A4BC00D9D440 /* ViewController.swift in Sources */,
+				7E9357E327F5FD4800FC2508 /* Pokedex.swift in Sources */,
+				7E9357E127F5FCDA00FC2508 /* ApiHelper.swift in Sources */,
+				7E9134B127E3A4BC00D9D440 /* DiscoverViewController.swift in Sources */,
 				7E9134AD27E3A4BC00D9D440 /* AppDelegate.swift in Sources */,
 				7E9134AF27E3A4BC00D9D440 /* SceneDelegate.swift in Sources */,
+				7E9357EB27F874DC00FC2508 /* PokemonDiscoverCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +345,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,7 +357,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,6 +374,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +386,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
