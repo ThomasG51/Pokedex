@@ -11,8 +11,8 @@ class DiscoverViewController: UIViewController {
     // MARK: - Property
     
     var pokedex: Pokedex? = nil
-    var pokemonCell = "PokemonDiscoverCell"
-    var gameCell = "GameDiscoverCell"
+    let pokemonCell = "PokemonDiscoverCell"
+    let gameCell = "GameDiscoverCell"
     
     // MARK: - IBOutlet
     
