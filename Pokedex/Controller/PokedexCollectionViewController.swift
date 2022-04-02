@@ -20,6 +20,8 @@ class PokedexCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
     // MARK: - IBAction
@@ -94,7 +96,15 @@ class PokedexCollectionViewController: UICollectionViewController {
 extension PokedexCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 150)
+        return CGSize(width: 115, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
     
 }

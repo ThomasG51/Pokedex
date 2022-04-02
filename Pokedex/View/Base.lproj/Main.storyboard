@@ -135,11 +135,12 @@
                     <connections>
                         <segue destination="2Ji-jt-rTt" kind="relationship" relationship="viewControllers" id="l5S-B3-ash"/>
                         <segue destination="lhR-Ek-sQj" kind="relationship" relationship="viewControllers" id="aJr-Kj-vqO"/>
+                        <segue destination="5yG-zS-2rg" kind="relationship" relationship="viewControllers" id="Jqr-ke-2id"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kys-qJ-5uh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-438" y="822"/>
+            <point key="canvasLocation" x="-920" y="947"/>
         </scene>
         <!--Pokedex-->
         <scene sceneID="1vU-o7-Fey">
@@ -149,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cQ0-Ak-cLL">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cQ0-Ak-cLL">
                             <size key="itemSize" width="128" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -169,16 +170,21 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X5D-xR-igy">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="X5D-xR-igy" secondAttribute="height" multiplier="1:1" id="VYq-U5-gqD"/>
+                                                        <constraint firstAttribute="width" secondItem="X5D-xR-igy" secondAttribute="height" multiplier="1:1" id="di7-HY-uES"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Pokemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRI-Cf-3Jt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Pokemon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRI-Cf-3Jt">
                                                     <rect key="frame" x="0.0" y="139.5" width="128" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X5D-xR-igy" firstAttribute="width" secondItem="wER-C3-1bD" secondAttribute="width" id="0IR-y5-XXs"/>
+                                                <constraint firstItem="PRI-Cf-3Jt" firstAttribute="leading" secondItem="wER-C3-1bD" secondAttribute="leading" id="HHY-bG-arU"/>
+                                                <constraint firstAttribute="trailing" secondItem="PRI-Cf-3Jt" secondAttribute="trailing" id="iTU-Ep-ZRy"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -244,8 +250,57 @@
             </objects>
             <point key="canvasLocation" x="740.57971014492762" y="821.65178571428567"/>
         </scene>
+        <!--Games-->
+        <scene sceneID="Mmm-of-ieA">
+            <objects>
+                <tableViewController id="VEr-yd-6lC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XSL-gV-28d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QvN-ws-V3p">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QvN-ws-V3p" id="KQI-Zu-RB1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VEr-yd-6lC" id="B8B-5C-gHJ"/>
+                            <outlet property="delegate" destination="VEr-yd-6lC" id="h0n-s9-cou"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Games" id="MoV-02-gXH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0V-bO-wTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650.7246376811595" y="1539.5089285714284"/>
+        </scene>
+        <!--Games-->
+        <scene sceneID="gvz-SF-OdQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5yG-zS-2rg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Games" image="dpad.up.fill" catalog="system" id="cmQ-cQ-9wB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yVe-jy-g6a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VEr-yd-6lC" kind="relationship" relationship="rootViewController" id="SNK-nP-C1O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hoq-mr-Ukz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740.57971014492762" y="1539.5089285714284"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="dpad.up.fill" catalog="system" width="128" height="116"/>
         <image name="ipad" catalog="system" width="109" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
