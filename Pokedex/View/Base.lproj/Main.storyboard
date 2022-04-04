@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -253,19 +254,63 @@
         <!--Games-->
         <scene sceneID="Mmm-of-ieA">
             <objects>
-                <tableViewController id="VEr-yd-6lC" sceneMemberID="viewController">
+                <tableViewController id="VEr-yd-6lC" customClass="GamesTableViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XSL-gV-28d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QvN-ws-V3p">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="145" id="QvN-ws-V3p" customClass="GameTableViewCell" customModule="Pokedex" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QvN-ws-V3p" id="KQI-Zu-RB1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="145"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hif-CI-gke">
+                                            <rect key="frame" x="20" y="21" width="100" height="103"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="yAh-yG-BZO"/>
+                                                <constraint firstAttribute="height" constant="100" id="yKM-Iu-lwN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="i0U-A7-uCV">
+                                            <rect key="frame" x="140" y="21" width="227.5" height="103"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Version Emeraud" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t53-QX-lo6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="224.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameBoy Advance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-9D-3nm">
+                                                    <rect key="frame" x="0.0" y="46.5" width="122" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDl-ic-ds4">
+                                                    <rect key="frame" x="0.0" y="88.5" width="30.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hif-CI-gke" firstAttribute="leading" secondItem="KQI-Zu-RB1" secondAttribute="leadingMargin" id="1ll-Pg-Iql"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="i0U-A7-uCV" secondAttribute="trailing" constant="10" id="Ap7-4A-lc3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Hif-CI-gke" secondAttribute="bottom" constant="10" id="EpQ-CJ-lfa"/>
+                                        <constraint firstItem="Hif-CI-gke" firstAttribute="top" secondItem="KQI-Zu-RB1" secondAttribute="topMargin" constant="10" id="J6W-3z-bbJ"/>
+                                        <constraint firstItem="i0U-A7-uCV" firstAttribute="top" secondItem="KQI-Zu-RB1" secondAttribute="topMargin" constant="10" id="MhU-1d-NrS"/>
+                                        <constraint firstItem="i0U-A7-uCV" firstAttribute="leading" secondItem="Hif-CI-gke" secondAttribute="trailing" constant="20" id="saD-3O-0b3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="i0U-A7-uCV" secondAttribute="bottom" constant="10" id="utX-fY-36o"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameImage" destination="Hif-CI-gke" id="dKW-lZ-CtF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -303,6 +348,9 @@
         <image name="dpad.up.fill" catalog="system" width="128" height="116"/>
         <image name="ipad" catalog="system" width="109" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
