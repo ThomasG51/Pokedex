@@ -16,11 +16,12 @@ class PokedexCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Function
     
-    func setupCell() {
-        pokemonImage.layer.backgroundColor = UIColor.systemGray.cgColor
-        pokemonImage.layer.cornerRadius = 10
+    func setupCell(pokemon: Pokedex.Pokemon, number: Int) {
+        if let url = URL(string: "https://cdn.traction.one/pokedex/pokemon/\(number).png") {
+            pokemonImage.load(url: url)
+        }
         
-        pokemonName.text = "Pokemon Name"
+        pokemonName.text = pokemon.name
     }
     
 }
