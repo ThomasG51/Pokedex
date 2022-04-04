@@ -60,6 +60,10 @@ class PokedexCollectionViewController: UICollectionViewController {
 
     // MARK: - CollectionView Delegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "PokedexCellSegue", sender: nil)
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

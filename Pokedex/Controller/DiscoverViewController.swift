@@ -74,6 +74,12 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == pokemonCollectionView {
+            performSegue(withIdentifier: "PokemonDiscoverSegue", sender: nil)
+        }
+    }
+    
 }
 
 // MARK: - CollectionView Flow Layout

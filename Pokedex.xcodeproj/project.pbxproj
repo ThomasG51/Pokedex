@@ -21,6 +21,7 @@
 		7E9357F127F8A80700FC2508 /* PokedexCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9357F027F8A80700FC2508 /* PokedexCollectionViewCell.swift */; };
 		7EE581E927F8BC64000D5C41 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE581E827F8BC64000D5C41 /* GameTableViewCell.swift */; };
 		7EE581EB27F8BCA1000D5C41 /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE581EA27F8BCA1000D5C41 /* GamesTableViewController.swift */; };
+		7EE581ED27FAD932000D5C41 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE581EC27FAD932000D5C41 /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7E9357F027F8A80700FC2508 /* PokedexCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EE581E827F8BC64000D5C41 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		7EE581EA27F8BCA1000D5C41 /* GamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewController.swift; sourceTree = "<group>"; };
+		7EE581EC27FAD932000D5C41 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				7E9134B027E3A4BC00D9D440 /* DiscoverViewController.swift */,
 				7E9357EE27F8A43600FC2508 /* PokedexCollectionViewController.swift */,
 				7EE581EA27F8BCA1000D5C41 /* GamesTableViewController.swift */,
+				7EE581EC27FAD932000D5C41 /* PokemonDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				7E9357E127F5FCDA00FC2508 /* ApiHelper.swift in Sources */,
 				7E9134B127E3A4BC00D9D440 /* DiscoverViewController.swift in Sources */,
 				7E9357EF27F8A43600FC2508 /* PokedexCollectionViewController.swift in Sources */,
+				7EE581ED27FAD932000D5C41 /* PokemonDetailViewController.swift in Sources */,
 				7E9134AD27E3A4BC00D9D440 /* AppDelegate.swift in Sources */,
 				7EE581E927F8BC64000D5C41 /* GameTableViewCell.swift in Sources */,
 				7E9134AF27E3A4BC00D9D440 /* SceneDelegate.swift in Sources */,
