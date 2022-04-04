@@ -373,7 +373,7 @@
         <scene sceneID="gvz-SF-OdQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5yG-zS-2rg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Games" image="dpad.up.fill" catalog="system" id="cmQ-cQ-9wB"/>
+                    <tabBarItem key="tabBarItem" title="Games" image="dpad.up.filled" catalog="system" id="cmQ-cQ-9wB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yVe-jy-g6a">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -393,7 +393,7 @@
         <segue reference="0pQ-FG-6nd"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="dpad.up.fill" catalog="system" width="128" height="116"/>
+        <image name="dpad.up.filled" catalog="system" width="128" height="116"/>
         <image name="ipad" catalog="system" width="109" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="AccentColor">
