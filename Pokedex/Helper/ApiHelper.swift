@@ -11,6 +11,7 @@ import UIKit
 class ApiHelper {
     
     // MARK: - PROPERTY
+    
     static let shared = ApiHelper()
     
     // MARK: - FUNCTION
