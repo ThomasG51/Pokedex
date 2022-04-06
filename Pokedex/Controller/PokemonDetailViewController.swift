@@ -33,7 +33,6 @@ class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
         
         roundedView.layer.cornerRadius = 20
-        pokemonImage.layer.backgroundColor = UIColor.systemOrange.cgColor
         
         loadPokemon()
     }
@@ -52,6 +51,7 @@ class PokemonDetailViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             ApiHelper.shared.getPokemon(name: self.name) { [unowned self] pokemon in
                 DispatchQueue.main.async {
+                    self.pokemonImage.layer.backgroundColor = self.getColor(for: pokemon.types[0].category.name)
                     self.pokemonImage.load(url: URL(string: "https://img.pokemondb.net/artwork/vector/large/\(pokemon.name).png")!)
                     self.pokemonName.text = pokemon.name.capitalizingFirstLetter()
                     
@@ -69,4 +69,51 @@ class PokemonDetailViewController: UIViewController {
         }
     }
 
+    private func getColor(for type: String) -> CGColor {
+        switch type {
+        case "normal":
+            return UIColor.systemGray.cgColor
+        case "fighting":
+            return UIColor.systemBrown.cgColor
+        case "flying":
+            return UIColor.systemTeal.cgColor
+        case "poison":
+            return UIColor.systemPurple.cgColor
+        case "ground":
+            return UIColor.systemBrown.cgColor
+        case "rock":
+            return UIColor.systemGray3.cgColor
+        case "bug":
+            return UIColor.systemGreen.cgColor
+        case "ghost":
+            return UIColor.systemGray2.cgColor
+        case "steel":
+            return UIColor.systemGray3.cgColor
+        case "fire":
+            return UIColor.systemOrange.cgColor
+        case "water":
+            return UIColor.systemBlue.cgColor
+        case "grass":
+            return UIColor.systemGreen.cgColor
+        case "electric":
+            return UIColor.systemYellow.cgColor
+        case "psychic":
+            return UIColor.systemIndigo.cgColor
+        case "ice":
+            return UIColor.systemCyan.cgColor
+        case "dragon":
+            return UIColor.systemMint.cgColor
+        case "dark":
+            return UIColor.black.cgColor
+        case "fairy":
+            return UIColor.systemRed.cgColor
+        case "unknown":
+            return UIColor.systemGray.cgColor
+        case "shadow":
+            return UIColor.systemGray.cgColor
+        default:
+            return UIColor.systemOrange.cgColor
+        }
+    }
+    
 }

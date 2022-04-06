@@ -29,10 +29,10 @@ struct Pokemon: Decodable {
     var types : [Types]
     struct Types: Decodable {
         enum CodingKeys: String, CodingKey {
-            case name = "type"
+            case category = "type"
         }
-        var name: Name
-        struct Name: Decodable {
+        var category: Category
+        struct Category: Decodable {
             var name: String
         }
     }
