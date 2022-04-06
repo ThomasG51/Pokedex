@@ -22,9 +22,9 @@ class PokedexCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPokedex()
-        
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        
+        loadPokedex()
     }
     
     // MARK: - Private Function
@@ -33,11 +33,20 @@ class PokedexCollectionViewController: UICollectionViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             ApiHelper.shared.getPokedex { [unowned self] pokedex in
                 self.pokedex = pokedex
-                
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
             }
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PokemonDetailViewController {
+            let pokemonDetailVC = segue.destination as! PokemonDetailViewController
+            let name = sender as! String
+            pokemonDetailVC.name = name
         }
     }
 
@@ -56,7 +65,7 @@ class PokedexCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pokedexCell, for: indexPath) as! PokedexCollectionViewCell
         
         if let pokemon = pokedex?.pokemon[indexPath.item] {
-            cell.setupCell(pokemon: pokemon, number: indexPath.item + 1)
+            cell.setupCell(pokemon: pokemon)
         }
         
         return cell
@@ -65,7 +74,7 @@ class PokedexCollectionViewController: UICollectionViewController {
     // MARK: - CollectionView Delegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "PokedexCellSegue", sender: nil)
+        performSegue(withIdentifier: "PokedexCellSegue", sender: pokedex?.pokemon[indexPath.item].name)
     }
 
 }

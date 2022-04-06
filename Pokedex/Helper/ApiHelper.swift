@@ -32,4 +32,20 @@ class ApiHelper {
         }.resume()
     }
     
+    func getPokemon(name: String, completion: @escaping(Pokemon) -> Void) {
+        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon-form/\(name)") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+            
+            do {
+                let pokemon = try JSONDecoder().decode(Pokemon.self, from: data)
+                
+                completion(pokemon)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
+    
 }

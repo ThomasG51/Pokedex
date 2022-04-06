@@ -175,8 +175,8 @@
                                                         <constraint firstAttribute="width" secondItem="X5D-xR-igy" secondAttribute="height" multiplier="1:1" id="di7-HY-uES"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Pokemon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRI-Cf-3Jt">
-                                                    <rect key="frame" x="0.0" y="139.5" width="128" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRI-Cf-3Jt">
+                                                    <rect key="frame" x="0.0" y="128" width="128" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -233,7 +233,65 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SS-uO-O5C">
                                 <rect key="frame" x="0.0" y="394" width="414" height="419"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-mt-Oih">
+                                        <rect key="frame" x="30" y="20" width="364" height="37"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Pwp-XY-aMT">
+                                        <rect key="frame" x="30" y="87" width="354" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wtB-ZN-zrl">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="2za-Wd-iDg"/>
+                                                    <constraint firstAttribute="width" constant="80" id="Pz3-dP-3Ct"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="va0-HR-LE3">
+                                                <rect key="frame" x="91.5" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="SA7-yn-n0h"/>
+                                                    <constraint firstAttribute="height" constant="80" id="tLL-c8-pll"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cab-wj-xQP">
+                                                <rect key="frame" x="182.5" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="IJq-SB-lMs"/>
+                                                    <constraint firstAttribute="width" constant="80" id="t8o-AK-FeX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-C8-gqj">
+                                                <rect key="frame" x="274" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="7Np-aF-QDA"/>
+                                                    <constraint firstAttribute="height" constant="80" id="hRM-3r-8Eu"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCR-9n-3FR">
+                                        <rect key="frame" x="30" y="217" width="354" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bIB-mt-Oih" secondAttribute="trailing" constant="20" id="9nk-VS-fKm"/>
+                                    <constraint firstItem="Pwp-XY-aMT" firstAttribute="leading" secondItem="2SS-uO-O5C" secondAttribute="leading" constant="30" id="B0n-pq-ry6"/>
+                                    <constraint firstItem="aCR-9n-3FR" firstAttribute="leading" secondItem="2SS-uO-O5C" secondAttribute="leading" constant="30" id="C4I-2s-sTD"/>
+                                    <constraint firstItem="bIB-mt-Oih" firstAttribute="leading" secondItem="2SS-uO-O5C" secondAttribute="leading" constant="30" id="Cdc-oY-gz2"/>
+                                    <constraint firstAttribute="trailing" secondItem="aCR-9n-3FR" secondAttribute="trailing" constant="30" id="JPV-Ic-KxS"/>
+                                    <constraint firstItem="aCR-9n-3FR" firstAttribute="top" secondItem="Pwp-XY-aMT" secondAttribute="bottom" constant="50" id="N48-zs-5K7"/>
+                                    <constraint firstItem="bIB-mt-Oih" firstAttribute="top" secondItem="2SS-uO-O5C" secondAttribute="top" constant="20" id="O0t-8f-TWy"/>
+                                    <constraint firstItem="Pwp-XY-aMT" firstAttribute="top" secondItem="bIB-mt-Oih" secondAttribute="bottom" constant="30" id="aE6-iS-61m"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pwp-XY-aMT" secondAttribute="trailing" constant="30" id="jDd-5p-Kd7"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kXa-My-8pl"/>
@@ -251,7 +309,16 @@
                     <navigationItem key="navigationItem" id="sRc-px-rB5"/>
                     <connections>
                         <outlet property="pokemonImage" destination="E0F-zC-KTc" id="jxQ-nh-rbd"/>
+                        <outlet property="pokemonName" destination="bIB-mt-Oih" id="DT4-Sp-lSJ"/>
                         <outlet property="roundedView" destination="2SS-uO-O5C" id="2g6-6b-HGa"/>
+                        <outlet property="spriteBackDefault" destination="va0-HR-LE3" id="tbB-v0-VfD"/>
+                        <outlet property="spriteBackShiny" destination="vxX-C8-gqj" id="fVg-4l-3Dg"/>
+                        <outlet property="spriteFrontDefault" destination="wtB-ZN-zrl" id="orJ-yi-Jd2"/>
+                        <outlet property="spriteFrontShiny" destination="cab-wj-xQP" id="Uxh-iV-UGI"/>
+                        <outletCollection property="sprites" destination="wtB-ZN-zrl" collectionClass="NSMutableArray" id="Xh0-BU-a6n"/>
+                        <outletCollection property="sprites" destination="cab-wj-xQP" collectionClass="NSMutableArray" id="qcm-QN-kCj"/>
+                        <outletCollection property="sprites" destination="va0-HR-LE3" collectionClass="NSMutableArray" id="yB6-Xu-vw5"/>
+                        <outletCollection property="sprites" destination="vxX-C8-gqj" collectionClass="NSMutableArray" id="So7-mq-9jk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qha-z8-y5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,7 +457,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0pQ-FG-6nd"/>
+        <segue reference="Nfh-RM-nRZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dpad.up.filled" catalog="system" width="128" height="116"/>

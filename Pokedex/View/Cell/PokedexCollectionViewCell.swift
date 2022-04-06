@@ -16,8 +16,8 @@ class PokedexCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Function
     
-    func setupCell(pokemon: Pokedex.Pokemon, number: Int) {
-        if let url = URL(string: "https://img.pokemondb.net/artwork/large/\(pokemon.name).jpg") {
+    func setupCell(pokemon: Pokedex.Pokemon) {
+        if let url = URL(string: "https://img.pokemondb.net/artwork/vector/large/\(pokemon.name).png") {
             pokemonImage.load(url: url)
         }
         
