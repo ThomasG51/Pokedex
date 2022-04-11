@@ -88,7 +88,7 @@ extension DiscoverViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == pokemonCollectionView {
-            return CGSize(width: collectionView.layer.frame.width, height: collectionView.layer.frame.width)
+            return CGSize(width: collectionView.layer.frame.width, height: collectionView.layer.frame.height)
         } else { // gameCollectionView
             return CGSize(width: 140, height: 140)
         }
