@@ -11,7 +11,7 @@ class PokemonDiscoverCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Property
     
-    
+    var pokemon: Pokedex.Pokemon!
     
     // MARK: - IBOutlet
     
@@ -19,9 +19,10 @@ class PokemonDiscoverCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Function
     
-    func setupCell() {
-        let randomColors = [UIColor.systemRed.cgColor, UIColor.systemBlue.cgColor, UIColor.systemOrange.cgColor, UIColor.systemGreen.cgColor]
-        pokemonImage.layer.backgroundColor = randomColors[Int.random(in: 0...3)]
+    func setupCell(with pokemon: Pokedex.Pokemon) {
+        if let url = URL(string: "https://img.pokemondb.net/artwork/vector/large/\(pokemon.name).png") {
+            pokemonImage.load(url: url)
+        }
     }
 
 }

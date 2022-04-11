@@ -101,19 +101,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vMk-RV-i2q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0KJ-Gr-wQA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f02-Yo-g3H" secondAttribute="trailing" constant="20" id="0gt-nx-LFA"/>
+                            <constraint firstItem="vMk-RV-i2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7WQ-NY-dcS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vMk-RV-i2q" secondAttribute="trailing" id="9l8-PO-D2J"/>
                             <constraint firstItem="vMk-RV-i2q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B8c-ak-L7c"/>
                             <constraint firstItem="og2-rw-3Hd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q5G-Oe-ItP"/>
-                            <constraint firstItem="vMk-RV-i2q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RNH-Np-nhz"/>
                             <constraint firstItem="og2-rw-3Hd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wlr-Gk-zHF"/>
                             <constraint firstItem="f02-Yo-g3H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YFQ-sp-IUE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="og2-rw-3Hd" secondAttribute="bottom" constant="10" id="b3O-Et-voX"/>
                             <constraint firstItem="og2-rw-3Hd" firstAttribute="top" secondItem="f02-Yo-g3H" secondAttribute="bottom" constant="10" id="d9r-1F-iri"/>
-                            <constraint firstItem="vMk-RV-i2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hbE-qH-8da"/>
                             <constraint firstItem="f02-Yo-g3H" firstAttribute="top" secondItem="vMk-RV-i2q" secondAttribute="bottom" constant="20" id="sgE-dl-Wn9"/>
-                            <constraint firstItem="vMk-RV-i2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uMR-O8-d7j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Discover" id="5V0-dK-hiD"/>
@@ -125,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="113.79310344827587"/>
+            <point key="canvasLocation" x="1650.7692307692307" y="113.74407582938387"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="q2W-fE-YCe">

@@ -10,7 +10,7 @@ import UIKit
 class DiscoverViewController: UIViewController {
     // MARK: - Property
     
-    var pokedex: Pokedex? = nil
+    var pokemon = [Pokedex.Pokemon]()
     let pokemonCell = "PokemonDiscoverCell"
     let games: [Game] = Bundle.main.decode("games.json")
     let gameCell = "GameDiscoverCell"
@@ -25,6 +25,8 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadPokemon()
+        
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
         
@@ -37,13 +39,34 @@ class DiscoverViewController: UIViewController {
     
     
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PokemonDetailViewController {
+            let pokemonDetailVC = segue.destination as! PokemonDetailViewController
+            let name = sender as! String
+            pokemonDetailVC.name = name
+        }
+    }
+    
     // MARK: - Function
     
     
     
     // MARK: - Private Function
     
-    
+    private func loadPokemon() {
+        ApiHelper.shared.getPokedex { pokedex in
+            for _ in 0..<3 {
+                self.pokemon.append(pokedex.pokemon[Int.random(in: 0...150)])
+            }
+            
+            DispatchQueue.main.async { [unowned self] in
+                self.pokemonCollectionView.reloadData()
+                print(self.pokemon)
+            }
+        }
+    }
     
 }
 
@@ -57,7 +80,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == pokemonCollectionView {
-            return 4
+            return pokemon.count
         } else { // gameCollectionView
             return 4
         }
@@ -66,7 +89,8 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == pokemonCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pokemonCell, for: indexPath) as! PokemonDiscoverCollectionViewCell
-            cell.setupCell()
+            cell.setupCell(with: pokemon[indexPath.item])
+            
             return cell
         } else { // gameCollectionView
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameCell, for: indexPath) as! GameDiscoverCollectionViewCell
@@ -77,7 +101,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == pokemonCollectionView {
-            performSegue(withIdentifier: "PokemonDiscoverSegue", sender: nil)
+            performSegue(withIdentifier: "PokemonDiscoverSegue", sender: pokemon[indexPath.item].name)
         }
     }
     
