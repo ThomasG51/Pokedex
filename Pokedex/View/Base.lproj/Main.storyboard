@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vMk-RV-i2q">
-                                <rect key="frame" x="0.0" y="140" width="390" height="401"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wMo-aV-EGN">
                                     <size key="itemSize" width="375" height="420"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonDiscoverCell" id="hxy-pm-Wcy" customClass="PokemonDiscoverCollectionViewCell" customModule="Pokedex" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-9.6666666666666661" width="375" height="420"/>
+                                        <rect key="frame" x="0.0" y="16.666666666666668" width="375" height="420"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7vH-wf-gsc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
@@ -247,11 +247,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSo-I5-asL">
-                                        <rect key="frame" x="30" y="184" width="80" height="24"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <rect key="frame" x="30" y="184" width="12" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-fe-spA">
+                                                <rect key="frame" x="6" y="12" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="UPK-ue-Y62"/>
+                                            <constraint firstItem="Pvg-fe-spA" firstAttribute="leading" secondItem="oSo-I5-asL" secondAttribute="leading" constant="6" id="G6M-t7-TAf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pvg-fe-spA" secondAttribute="trailing" constant="6" id="P3I-EI-F3i"/>
                                             <constraint firstAttribute="height" constant="24" id="UYf-73-oFO"/>
+                                            <constraint firstItem="Pvg-fe-spA" firstAttribute="centerY" secondItem="oSo-I5-asL" secondAttribute="centerY" id="tF8-iB-hiU"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-8f-RdY">
@@ -358,15 +368,21 @@
                     <navigationItem key="navigationItem" id="sRc-px-rB5"/>
                     <connections>
                         <outlet property="pokemonImage" destination="E0F-zC-KTc" id="jxQ-nh-rbd"/>
+                        <outlet property="pokemonName" destination="yWE-Ug-Ycd" id="C4u-Qf-zaB"/>
                         <outlet property="roundedView" destination="2SS-uO-O5C" id="2g6-6b-HGa"/>
                         <outlet property="spriteBackDefault" destination="va0-HR-LE3" id="tbB-v0-VfD"/>
                         <outlet property="spriteBackShiny" destination="vxX-C8-gqj" id="fVg-4l-3Dg"/>
                         <outlet property="spriteFrontDefault" destination="wtB-ZN-zrl" id="orJ-yi-Jd2"/>
                         <outlet property="spriteFrontShiny" destination="cab-wj-xQP" id="Uxh-iV-UGI"/>
+                        <outlet property="typeColor" destination="oSo-I5-asL" id="8pL-cz-0Bl"/>
+                        <outlet property="typeLabel" destination="Pvg-fe-spA" id="DpO-Wt-Den"/>
                         <outletCollection property="sprites" destination="wtB-ZN-zrl" collectionClass="NSMutableArray" id="Xh0-BU-a6n"/>
                         <outletCollection property="sprites" destination="cab-wj-xQP" collectionClass="NSMutableArray" id="qcm-QN-kCj"/>
                         <outletCollection property="sprites" destination="va0-HR-LE3" collectionClass="NSMutableArray" id="yB6-Xu-vw5"/>
                         <outletCollection property="sprites" destination="vxX-C8-gqj" collectionClass="NSMutableArray" id="So7-mq-9jk"/>
+                        <outletCollection property="games" destination="Z0X-ac-hsJ" collectionClass="NSMutableArray" id="QjL-wc-G1w"/>
+                        <outletCollection property="games" destination="OtE-Pg-2Y6" collectionClass="NSMutableArray" id="Wt2-EU-0xG"/>
+                        <outletCollection property="games" destination="5bC-mR-avt" collectionClass="NSMutableArray" id="lvb-Uw-qEj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qha-z8-y5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,9 +535,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

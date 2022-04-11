@@ -20,6 +20,8 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonName: UILabel!
     
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var typeColor: UIView!
     
     @IBOutlet var sprites: [UIImageView]!
     @IBOutlet weak var spriteFrontDefault: UIImageView!
@@ -27,12 +29,18 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var spriteBackDefault: UIImageView!
     @IBOutlet weak var spriteBackShiny: UIImageView!
     
+    @IBOutlet var games: [UIImageView]!
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         roundedView.layer.cornerRadius = 20
+        
+        for game in games {
+            game.layer.cornerRadius = 8
+        }
         
         loadPokemon()
     }
@@ -64,6 +72,10 @@ class PokemonDetailViewController: UIViewController {
                     self.spriteBackDefault.load(url: URL(string: pokemon.sprites.backDefault)!)
                     self.spriteFrontShiny.load(url: URL(string: pokemon.sprites.frontShiny)!)
                     self.spriteBackShiny.load(url: URL(string: pokemon.sprites.backShiny)!)
+                    
+                    self.typeLabel.text = pokemon.types[0].category.name
+                    self.typeColor.layer.backgroundColor = self.getColor(for: pokemon.types[0].category.name)
+                    self.typeColor.layer.cornerRadius = 4
                 }
             }
         }
