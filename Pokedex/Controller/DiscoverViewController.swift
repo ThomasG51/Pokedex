@@ -12,6 +12,7 @@ class DiscoverViewController: UIViewController {
     
     var pokedex: Pokedex? = nil
     let pokemonCell = "PokemonDiscoverCell"
+    let games: [Game] = Bundle.main.decode("games.json")
     let gameCell = "GameDiscoverCell"
     
     // MARK: - IBOutlet
@@ -29,7 +30,7 @@ class DiscoverViewController: UIViewController {
         
         gameCollectionView.delegate = self
         gameCollectionView.dataSource = self
-        gameCollectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        gameCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     // MARK: - IBAction
@@ -58,7 +59,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == pokemonCollectionView {
             return 4
         } else { // gameCollectionView
-            return 8
+            return 4
         }
     }
     
@@ -69,7 +70,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         } else { // gameCollectionView
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameCell, for: indexPath) as! GameDiscoverCollectionViewCell
-            cell.setupCell()
+            cell.setupCell(with: games[indexPath.item])
             return cell
         }
     }
@@ -102,7 +103,7 @@ extension DiscoverViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == pokemonCollectionView {
             return 0
         } else { // gameCollectionView
-            return 10
+            return 20
         }
     }
     
