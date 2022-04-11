@@ -485,7 +485,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="gameConsole" destination="qRC-9D-3nm" id="9k8-kg-nTA"/>
                                     <outlet property="gameImage" destination="Hif-CI-gke" id="dKW-lZ-CtF"/>
+                                    <outlet property="gameTitle" destination="t53-QX-lo6" id="swW-fu-UXw"/>
+                                    <outlet property="gameYear" destination="PDl-ic-ds4" id="VdV-D6-3B8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

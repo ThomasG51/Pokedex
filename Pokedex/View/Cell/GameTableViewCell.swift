@@ -11,17 +11,23 @@ class GameTableViewCell: UITableViewCell {
 
     // MARK: - Property
     
+    var game: Game!
+    
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var gameImage: UIImageView!
+    @IBOutlet weak var gameTitle: UILabel!
+    @IBOutlet weak var gameConsole: UILabel!
+    @IBOutlet weak var gameYear: UILabel!
     
     // MARK: - Function
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-    
-    func setupCell() {
-        gameImage.layer.backgroundColor = UIColor.systemCyan.cgColor
+    func setupCell(with game: Game) {
+        gameImage.image = UIImage(named: game.version)
         gameImage.layer.cornerRadius = 10
+        gameTitle.text = game.title
+        gameConsole.text = game.console
+        gameYear.text = String(game.year)
     }
 
 }

@@ -1,0 +1,32 @@
+
+[{
+    "title": "Pokemon Version Blue",
+    "version": "blue",
+    "year": 1996,
+    "console": "Game Boy"
+},{
+    "title": "Pokemon Version Red",
+    "version": "red",
+    "year": 1996,
+    "console": "Game Boy"
+},{
+    "title": "Pokemon Version Yellow",
+    "version": "yellow",
+    "year": 1998,
+    "console": "Game Boy Color"
+},{
+    "title": "Pokemon Version Gold",
+    "version": "gold",
+    "year": 1999,
+    "console": "Game Boy Color"
+},{
+    "title": "Pokemon Version Silver",
+    "version": "silver",
+    "year": 1999,
+    "console": "Game Boy Color"
+},{
+    "title": "Pokemon Version Emerald",
+    "version": "emerald",
+    "year": 2004,
+    "console": "Game Boy Advance"
+}]
