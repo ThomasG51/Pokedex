@@ -12,13 +12,13 @@ class DiscoverViewController: UIViewController {
     
     var pokemon = [Pokedex.Pokemon]()
     let pokemonCell = "PokemonDiscoverCell"
-    let games: [Game] = Bundle.main.decode("games.json")
-    let gameCell = "GameDiscoverCell"
+    let types = Constant.shared.types
+    let typeCell = "TypeDiscoverCell"
     
     // MARK: - IBOutlet
     
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
-    @IBOutlet weak var gameCollectionView: UICollectionView!
+    @IBOutlet weak var typeCollectionView: UICollectionView!
     
     // MARK: - Life Cycle
     
@@ -30,9 +30,9 @@ class DiscoverViewController: UIViewController {
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
         
-        gameCollectionView.delegate = self
-        gameCollectionView.dataSource = self
-        gameCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        typeCollectionView.delegate = self
+        typeCollectionView.dataSource = self
+        typeCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     // MARK: - IBAction
@@ -81,8 +81,8 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == pokemonCollectionView {
             return pokemon.count
-        } else { // gameCollectionView
-            return 4
+        } else { // typeCollectionView
+            return types.count
         }
     }
     
@@ -90,11 +90,10 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == pokemonCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pokemonCell, for: indexPath) as! PokemonDiscoverCollectionViewCell
             cell.setupCell(with: pokemon[indexPath.item])
-            
             return cell
-        } else { // gameCollectionView
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameCell, for: indexPath) as! GameDiscoverCollectionViewCell
-            cell.setupCell(with: games[indexPath.item])
+        } else { // typeCollectionView
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: typeCell, for: indexPath) as! TypeDiscoverCollectionViewCell
+            cell.setupCell(with: types[indexPath.item])
             return cell
         }
     }
@@ -114,7 +113,7 @@ extension DiscoverViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == pokemonCollectionView {
             return CGSize(width: collectionView.layer.frame.width, height: collectionView.layer.frame.height)
-        } else { // gameCollectionView
+        } else { // typeCollectionView
             return CGSize(width: 140, height: 140)
         }
     }
