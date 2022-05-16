@@ -26,13 +26,13 @@ class PokemonDiscoverCollectionViewCell: UICollectionViewCell {
                 if let url = URL(string: "https://img.pokemondb.net/artwork/vector/large/\(pokemon.name).png") {
                     pokemonImage.load(url: url)
                 }
-                self.setupeGradient(for: pokemon.types[0].category.name)
+                self.setupGradient(for: pokemon.types[0].category.name)
             }
         }
     }
 
     
-    private func setupeGradient(for type: String) {
+    private func setupGradient(for type: String) {
         switch type {
         case "normal":
             radialGradient.sideColor = UIColor(named: "normal dark") ?? .systemGray

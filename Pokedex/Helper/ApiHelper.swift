@@ -24,7 +24,6 @@ class ApiHelper {
             
             do {
                 let pokedex = try JSONDecoder().decode(Pokedex.self, from: data)
-                
                 completion(pokedex)
             } catch {
                 print("Decode error: " + error.localizedDescription)
@@ -40,8 +39,22 @@ class ApiHelper {
             
             do {
                 let pokemon = try JSONDecoder().decode(Pokemon.self, from: data)
-                
                 completion(pokemon)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
+    
+    func getTypes(by name: String, completion: @escaping(Types) -> Void) {
+        guard let url = URL(string: "https://pokeapi.co/api/v2/type/\(name)/") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+            
+            do {
+                let type = try JSONDecoder().decode(Types.self, from: data)
+                completion(type)
             } catch {
                 print(error.localizedDescription)
             }
